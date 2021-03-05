@@ -61,7 +61,6 @@ def draw_detections(img, boxes, playerNotPlayermodel, playerModel, playerLB):
             (notPlayer, player) = playerNotPlayermodel.predict(image)[0]
             if player > notPlayer:
                 (label, score) = predict_label(cropped, playerModel, playerLB)
-                print(label)
                 cv2.rectangle(img, (x, y), (x2, y2), (0, 255, 0), 2)
                 cv2.putText(img, label, (x, y), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 2)
 
